@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    tools:context=".AddExpenseActivity">
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/backBTN"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"
+            />
+        <TextView
+            android:textSize="16sp"
+            android:textStyle="bold"
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Expense"
+            android:textColor="#FFF"/>
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="3dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:background="#F2F2F2"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Expense Type"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+                <Spinner
+                    android:id="@+id/addActivityTypeSpinnerID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="@color/colorAccent"/>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+
+    <EditText
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:background="@drawable/custom_edit_text"
+        android:layout_marginTop="5dp"
+        android:id="@+id/addActtivityexpenseAmountET"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Enter Expense Amount"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:paddingLeft="10dp"
+        />
+    <FrameLayout
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:background="@drawable/custom_edit_text"
+            android:id="@+id/addActivityexpenseDateET"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Enter Expense Date"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:paddingLeft="10dp"
+            />
+        <ImageView
+            android:id="@+id/addActivityDatePickerBtn"
+            android:clickable="true"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/ic_calendar"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="10dp"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:background="@drawable/custom_edit_text"
+            android:id="@+id/addActivityexpenseTimeET"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Enter Expense Time"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:paddingLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/addActiviTimePickerBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_clock"
+             />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/fileIV"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="fitXY"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/ic_image"
+        />
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:id="@+id/cameraGalleryLLfield"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cameraButtonID"
+                android:clickable="true"
+                android:onClick="openCamera"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/ic_camera"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textStyle="bold"
+                android:textSize="17sp"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/galleryButtonID"
+                android:clickable="true"
+                android:onClick="openGallery"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/ic_image"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gallery"
+                android:textStyle="bold"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cencleButtonID"
+                android:clickable="true"
+                android:onClick="cenclePickDocument"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/ic_close"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancle"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/addActivityaAddDocumentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Aocuments(if any)"
+            android:textAllCaps="false"
+            android:background="@drawable/custom_button"
+            android:textColor="#fff"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <Button
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/addActivityAddExpenseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add expense"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/custom_button"
+        android:textColor="#fff"
+        android:layout_marginRight="7dp"
+        android:textAllCaps="false"/>
+
+
+</LinearLayout>
